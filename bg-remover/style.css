@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Purple+Purse&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+body{
+    min-height: 100vh;
+    width: 100%;
+    background: rgb(34,39,43);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#logo{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#logo h1{
+    color: aliceblue;
+    font-weight: 500;
+    margin-left: 2px;
+    font-size: 30px;
+}
+
+.main{
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    background: rgb(24, 49, 49);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+}
+
+.style1{
+    max-width: 500px;
+    width: 90%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    gap: 1.875rem;
+}
+.style2{
+    max-width: 500px;
+    width: 90%;
+    height: 500px;
+}
+.image{
+    height: 300px;
+    width: 300px;
+    background-image: url("tras.avif");
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px black;
+}
+.image1{
+    width: 300px;
+    animation: remove 15s linear infinite;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.withbg{
+    width: 300px;
+}
+.image2{
+    width: 300px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+.nonbg{
+    width: 300px;
+}
+
+@keyframes remove{
+    0%,100%{
+        width: 100%;
+    }
+    50%{
+        width: 0%;
+    }
+}
+.text{
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(45deg, rgb(237, 69, 237), rgb(48, 65, 219));
+    text-align: center;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5vmax;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.upload-image{
+    height: 90%;
+    width: 85%;
+    background-color: rgb(34,40,42);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px black;
+    flex-direction: column;
+}
+.inner-upload-image{
+    width: 90%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    color: aliceblue;
+    font-size: 25px;
+    background-color: rgb(32, 51, 63);
+    border-radius: 10px;
+    overflow: hidden; /* ছবি বক্সের বাইরে যাওয়া ঠেকাতে */
+    position: relative;
+}
+.inner-upload-image:hover{
+    background-color: rgb(27, 44, 72);
+    box-shadow: inset 2px 2px 10px black;
+}
+
+/* আপলোড করা ছবির স্টাইল ঠিক করা হলো */
+.imputimg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ছবি যেন চ্যাপ্টা না হয়ে ঠিকভাবে বসে */
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#upload{
+    height: 12%;
+    width: 60%;
+    border: none;
+    background: linear-gradient(135deg, #111827, #374151, #111827);
+    border-radius: 10px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 15px;
+}
+#upload:hover {
+    background: linear-gradient(135deg, #374151, #4B5563, #111827);
+    border-color: #9CA3AF;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+
+/* ব্যাকগ্রাউন্ড রিমুভ হওয়া ছবির জন্য স্টাইল */
+#generatedimg{
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px black;
+    background: #111;
+}
+.result{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.mainbox{
+    width: 400px;
+    background-image: url(tras.avif);
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 2px 2px 20px rgb(16, 17, 17);
+}
+.resultimg1{
+    width: 0px;
+    animation: remove1 8s 1 linear ;
+    overflow: hidden ;
+}
+.resultimg2{
+    width: 400px;
+    position: absolute;
+    top: 0;
+    border-radius: 10px;
+}
+
+.btn {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 60px;
+    gap: 35px;
+    width: 100%;
+}
+
+.btn button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn1 {
+    background: linear-gradient(135deg, #6366f1, #9333ea);
+    color: white;
+}
+
+.btn2 {
+    background: #e5e7eb;
+    color: #111827;
+}
+.res{
+    display: flex;
+    flex-direction: column;
+}
+.resultimg1 img {
+    width: 400px;
+}
+.resultimg2 img{
+    width: 400px;
+}
+@keyframes remove1{
+    0%{
+        width: 400px;
+    }
+    100%{
+        width: 0px;
+    } }
+    @media (max-width: 768px) {
+    .main {
+          gap: 0;
+        row-gap: 5px;
+        padding: 10px;
+    }
+    }
+
+    .style1 {
+      margin-bottom: 0;
+        gap: 10px;
+        min-height: auto;
+    }
+
+    .style2 {
+        margin-top: 0;
+        height: 350px;
+    }
+
+    .upload-image {
+        height: 100%;
+        padding: 15px;
+    }
+
+    .res {
+        margin-top: 0;
+    }
+
+    .result {
+        gap: 10px;
+    }
+
+    .btn {
+        margin-top: 0;
+        gap: 10px;
+    }
+
+    .text {
+        margin-bottom: 0;
+    }
+h4{
+    background: linear-gradient(
+        90deg,
+        #f9d976,
+        #f39f86,
+        #f9d976
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
